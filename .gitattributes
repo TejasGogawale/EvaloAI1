@@ -1,0 +1,29 @@
+# Default: text files normalized; store LF in repo
+* text=auto eol=crlf
+
+# Explicit LF for common code/text
+*.js   text eol=crlf
+*.jsx  text eol=crlf
+*.ts   text eol=crlf
+*.tsx  text eol=crlf
+*.json text eol=crlf
+*.yml  text eol=crlf
+*.yaml text eol=crlf
+*.css  text eol=crlf
+*.scss text eol=crlf
+*.html text eol=crlf
+*.md   text eol=crlf
+*.sh   text eol=crlf
+
+# Keep Windows line endings for Windows scripts
+*.bat  text eol=crlf
+*.cmd  text eol=crlf
+
+# Never modify binaries
+*.png  binary
+*.jpg  binary
+*.jpeg binary
+*.gif  binary
+*.svg  binary
+*.ico  binary
+*.pdf  binary

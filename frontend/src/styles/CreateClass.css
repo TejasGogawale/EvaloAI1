@@ -1,0 +1,134 @@
+/* ---------- Create Class Modal (glass UI) ---------- */
+
+:root{
+  --crt-bg: rgba(15, 16, 34, 0.65);
+  --crt-card: rgba(26, 28, 58, 0.78);
+  --crt-border: rgba(145, 150, 255, 0.18);
+  --crt-shadow: 0 12px 40px rgba(0, 0, 0, 0.45), inset 0 1px 0 rgba(255,255,255,0.06);
+  --crt-ring: rgba(116, 130, 255, 0.65);
+  --crt-text: #eaeaf7;
+  --crt-muted: #a5a7c7;
+  --crt-primary: #5068ff;
+  --crt-primary-2: #3b54ff;
+  --crt-ghost: #2b2e52;
+  --crt-card-blur: 10px;
+  --crt-radius: 16px;
+}
+
+.crt-modal-backdrop{
+  position: fixed;
+  inset: 0;
+  background: var(--crt-bg);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  animation: crt-fade-in .18s ease-out;
+  z-index: 1000;
+}
+
+.crt-modal-wrap{
+  position: fixed;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  z-index: 1001;
+}
+
+.crt-modal-card{
+  width: min(560px, calc(100% - 32px));
+  background: linear-gradient(180deg, var(--crt-card), rgba(22,24,50,0.78));
+  border: 1px solid var(--crt-border);
+  border-radius: var(--crt-radius);
+  box-shadow: var(--crt-shadow);
+  color: var(--crt-text);
+  padding: 22px 22px 18px;
+  backdrop-filter: blur(var(--crt-card-blur));
+  -webkit-backdrop-filter: blur(var(--crt-card-blur));
+}
+
+.crt-animate-pop{
+  transform: translateY(6px) scale(0.98);
+  opacity: 0;
+  animation: crt-pop .2s ease-out forwards;
+}
+
+.crt-title{
+  margin: 2px 2px 14px;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: .2px;
+}
+
+.crt-label{
+  display:block;
+  margin: 8px 2px 6px;
+  font-size: 12px;
+  color: var(--crt-muted);
+}
+
+.crt-input{
+  width: 100%;
+  background: rgba(15,16,34,0.5);
+  border: 1px solid rgba(160,170,255,0.16);
+  color: var(--crt-text);
+  border-radius: 12px;
+  padding: 12px 14px;
+  outline: none;
+  transition: border-color .15s ease, box-shadow .15s ease, background .15s ease;
+}
+.crt-input::placeholder{ color: #8286ad; }
+.crt-input:focus{
+  border-color: var(--crt-ring);
+  box-shadow: 0 0 0 3px rgba(116,130,255,0.18), inset 0 0 0 1px var(--crt-ring);
+  background: rgba(22,24,50,0.66);
+}
+
+.crt-hint{
+  margin: 10px 2px 0;
+  font-size: 12px;
+  color: var(--crt-muted);
+}
+
+.crt-actions{
+  display:flex;
+  gap: 10px;
+  justify-content: flex-end;
+  margin-top: 16px;
+}
+
+.crt-btn{
+  height: 40px;
+  padding: 0 16px;
+  border-radius: 12px;
+  border: 1px solid transparent;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform .04s ease, background .15s ease, border-color .15s ease, box-shadow .15s ease, opacity .15s ease;
+}
+
+.crt-btn.primary{
+  background: linear-gradient(180deg, var(--crt-primary), var(--crt-primary-2));
+  color: white;
+  box-shadow: 0 6px 18px rgba(80,104,255,0.36);
+}
+.crt-btn.primary:disabled{
+  opacity: .55;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+.crt-btn.primary:not(:disabled):active{ transform: translateY(1px); }
+
+.crt-btn.ghost{
+  background: var(--crt-ghost);
+  color: var(--crt-text);
+  border: 1px solid rgba(160,170,255,0.16);
+}
+.crt-btn.ghost:hover{
+  border-color: rgba(160,170,255,0.3);
+}
+
+@keyframes crt-fade-in{
+  from{ opacity: 0; } to { opacity: 1; }
+}
+@keyframes crt-pop{
+  to { transform: translateY(0) scale(1); opacity: 1; }
+}

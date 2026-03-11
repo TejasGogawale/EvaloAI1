@@ -1,0 +1,30 @@
+# ============================================
+# CORE DEPENDENCIES (Required)
+# ============================================
+fastapi==0.104.1
+uvicorn[standard]==0.24.0
+pydantic==2.5.0
+python-dotenv==1.0.0
+requests==2.31.0
+
+# PDF and Document Processing
+PyMuPDF==1.23.8  # fitz for PDF extraction
+python-docx==1.1.0
+
+# NLP and Grading
+nltk==3.8.1
+bert-score==0.3.13
+language-tool-python==2.8
+scikit-learn==1.3.2
+numpy==1.24.3
+
+# ============================================
+# ENHANCED FEATURES (Recommended)
+# ============================================
+
+# AI Detection (FREE - No API key needed!)
+# transformers==4.35.2  # Optional: for local HuggingFace models
+# torch==2.1.0  # Optional: for transformers
+
+# Plagiarism Detection (FREE - No API key needed!)
+duckduckgo-search==3.9.6  # Web search, completely free

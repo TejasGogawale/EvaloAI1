@@ -1,0 +1,317 @@
+/* ===========================
+   Teacher Class Page (tclass-*)
+   matches the student cp-* look
+   =========================== */
+
+.tclass-page {
+  padding-bottom: 48px;
+}
+
+/* Hero / banner */
+.tclass-hero {
+  background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
+  border: 1px solid var(--card-border);
+  border-radius: 16px;
+  padding: 20px;
+  margin-bottom: 14px;
+}
+
+.tclass-hero-title {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.tclass-title {
+  font-weight: 800;
+  font-size: 28px;
+  letter-spacing: .2px;
+}
+.tclass-sub {
+  color: var(--muted);
+}
+
+/* Tabs */
+.tclass-tabs {
+  display: flex;
+  gap: 8px;
+  margin: 28px 0 12px;
+  border-bottom: 1px solid var(--card-border);
+}
+.tclass-tab {
+  padding: 10px 14px;
+  border: 0;
+  background: transparent;
+  color: var(--text);
+  cursor: pointer;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  font-weight: 600;
+  font-size: 16px;
+  transition: background .2s;
+}
+.tclass-tab--active {
+  background: rgba(110,168,254,.18);
+}
+
+/* Stream layout: side card + list */
+.tclass-body { /* wrapper padding if needed */ }
+.tclass-stream {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 16px;
+}
+@media (max-width: 960px) {
+  .tclass-stream { grid-template-columns: 1fr; }
+}
+
+/* Left: class code card */
+.tclass-side-card {
+  background: var(--bg-2);
+  border: 1px solid var(--card-border);
+  border-radius: 12px;
+  padding: 12px;
+  height: fit-content;
+}
+
+.tclass-ccode-label {
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+.tclass-ccode-value {
+  display: block;
+  margin-top: 2px;
+  font-weight: 800;
+  font-size: 18px;
+  letter-spacing: .08em;
+}
+.tclass-copy {
+  margin-top: 10px;
+}
+.tclass-copy-btn {
+  padding: 8px 12px;
+  border-radius: 10px;
+  border: 1px solid var(--card-border);
+  background: rgba(255,255,255,.06);
+  color: var(--text);
+  cursor: pointer;
+  transition: background .2s;
+}
+.tclass-copy-btn:hover { background: rgba(255,255,255,.1); }
+
+/* Right: assignment stream */
+.tclass-right {
+  display: grid;
+  gap: 12px;
+}
+.tclass-empty {
+  color: var(--muted);
+  padding: 20px 12px;
+  background: var(--bg-2);
+  border: 1px solid var(--card-border);
+  border-radius: 12px;
+}
+
+/* Assignment card */
+.t-assignment {
+  background: var(--bg-2);
+  border: 1px solid var(--card-border);
+  border-radius: 12px;
+  padding: 12px;
+  cursor: pointer;
+}
+.t-a-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+}
+.t-a-title {
+  font-weight: 600;
+}
+.t-a-menu {
+  opacity: .75;
+  padding: 6px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background .2s, opacity .2s;
+}
+.t-a-menu:hover {
+  background: rgba(255,255,255,.06);
+  opacity: 1;
+}
+.t-a-desc {
+  margin-top: 6px;
+  color: var(--text);
+  line-height: 1.45;
+}
+.t-a-meta {
+  margin-top: 8px;
+  color: var(--muted);
+  font-size: .9rem;
+}
+
+/* Top-right Create+ placeholder */
+.tclass-create {
+  position: absolute;  /* place inside page container that is position:relative */
+  right: 42px;
+  top: 202px;
+}
+.tclass-create .btn-create {
+  padding: 12px 16px;
+  border-radius: 14px;
+  border: 1px solid var(--card-border);
+  background: rgba(110,168,254,.18);
+  color: #fff;
+  font-weight: 700;
+  letter-spacing: .2px;
+  cursor: pointer;
+  transition: box-shadow .2s;
+  font-size: 16px;
+}
+.tclass-create .btn-create:hover {
+  box-shadow: 0 8px 22px rgba(110,168,254,.25);
+}
+
+/* Optional: highlight current item in enrolled list (parity with student) */
+.gc-enrolled-list .gc-enrolled-item.current {
+  background: rgba(110,168,254,.18) !important;
+  border: 1px solid rgba(110,168,254,.35) !important;
+}
+
+.cp-main {
+  /* keep content below TopNavTeacher */
+  padding-top: var(--topbar-height, 72px);
+}
+
+.tclass-title {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-auto-rows: auto;
+  align-items: end;
+  gap: 12px 16px;
+
+  background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.06) 0%,
+      rgba(255, 255, 255, 0.02) 100%
+    );
+  border: 1px solid var(--card-border);
+  border-radius: 16px;
+  padding: 18px 20px;
+  margin-bottom: 14px;
+  
+}
+
+.tclass-create {
+  grid-column: 2 / 3;
+  justify-self: end;
+  align-self: center;
+}
+.btn-create {
+  padding: 10px 14px;
+  border-radius: 10px;
+  border: 1px solid rgba(110, 168, 254, 0.35);
+  background:
+    radial-gradient(120% 120% at 100% 0%, rgba(110,168,254,0.22) 0%, rgba(110,168,254,0.05) 60%, rgba(110,168,254,0.02) 100%),
+    rgba(255,255,255,0.03);
+  color: #cfe0ff;
+  font-weight: 700;
+  transition: transform .06s ease, box-shadow .12s ease;
+}
+.btn-create:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 26px rgba(110,168,254,0.16);
+}
+.btn-create:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+.tclass-copy button {
+  padding: 8px 14px;
+  border-radius: 10px;
+  border: 1px solid rgba(110, 168, 254, 0.35);
+  background: linear-gradient(180deg, rgba(110,168,254,0.18), rgba(110,168,254,0.10));
+  color: #dce8ff;
+  font-weight: 700;
+  transition: transform .06s ease, box-shadow .12s ease;
+  cursor: pointer;
+}
+.tclass-copy button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 26px rgba(110,168,254,0.16);
+}
+.tclass-copy button:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+.t-assignment:hover{
+  transform: translateY(-1px);
+  box-shadow: 0 8px 26px rgba(110,168,254,0.12);
+}
+
+.t-assignment:active{
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+/* Overlay & dialog (same vibe as your Create Class modal) */
+.am-overlay {
+  position: fixed; inset: 0;
+  background: rgba(10, 12, 22, 0.55);
+  backdrop-filter: blur(6px);
+  display: grid; place-items: center;
+  z-index: 1000;
+}
+.am-dialog {
+  width: min(720px, 92vw);
+  background: radial-gradient(120% 140% at 100% 0%, rgba(110,168,254,.08), rgba(255,255,255,.03)),
+              rgba(20, 24, 40, 0.92);
+  border: 1px solid var(--card-border);
+  border-radius: 16px;
+  padding: 18px 20px 16px;
+  box-shadow: 0 30px 80px rgba(10,12,22,.55);
+}
+.am-title {
+  margin: 0 0 12px; font-weight: 800; font-size: 22px;
+}
+.am-label { display:block; margin: 10px 0 6px; font-weight: 700; }
+.am-req { color: #ffb3b3; }
+.am-input, .am-textarea {
+  width: 100%;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid var(--card-border);
+  border-radius: 10px;
+  color: var(--text);
+  padding: 10px 12px;
+}
+.am-textarea { resize: vertical; }
+.am-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+@media (max-width: 720px){ .am-grid { grid-template-columns: 1fr; } }
+
+.am-file {
+  display:flex; align-items:center; gap:10px;
+  padding: 10px 12px; border: 1px dashed var(--card-border);
+  border-radius: 10px; background: rgba(255,255,255,0.02);
+}
+.am-file input { flex: 0 0 auto; }
+.am-file-hint { color: var(--muted); }
+.am-file-name { color: var(--text); font-weight: 600; }
+
+.am-footer {
+  margin-top: 16px; display:flex; gap:10px; justify-content:flex-end;
+}
+.am-btn {
+  padding: 10px 14px; border-radius: 10px; font-weight: 700;
+  border: 1px solid rgba(110,168,254,.35); transition: transform .06s;
+}
+.am-btn:hover { transform: translateY(-1px); }
+.am-btn-primary {
+  background: linear-gradient(180deg, rgba(110,168,254,.22), rgba(110,168,254,.08));
+  color: #dfe8ff;
+}
+.am-btn-secondary {
+  background: rgba(255,255,255,.05); color: var(--text);
+}
+
